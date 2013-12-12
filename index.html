@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Login Page </title>
+
+   <link rel="apple-touch-icon" href="Icon.png" />
+
+    <link  href="cssjs/jquery.mobile-1.1.0.min.css" rel="stylesheet" type="text/css" />
+    <script src="cssjs/jquery-1.7.1.min.js"></script>
+    <script src="cssjs/jquery.mobile-1.1.0.min.js"></script>
+
+
+           <script type="text/javascript" charset="utf-8" src="lib/ios/cordova.js"></script>
+            <script type="text/javascript" charset="utf-8" src="lib/android/cordova.js"></script>
+             <script type="text/javascript" charset="utf-8" src="lib/win8/cordova.js"></script>
+
+
+
+ document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        navigator.splashscreen.show();
+    }
+
+ <script type="text/javascript" charset="utf-8" src="scripts/main.js"></script>
+
+
+</head>
+
+<body onload="init()">
+
+<div id="loginPage" data-role="page" data-theme="d">
+
+    <div data-role="header">
+        <h1>Login Page</h1>
+    </div>
+
+    <div data-role="content">
+
+        <form id="loginForm">
+        <div data-role="fieldcontain" class="ui-hide-label">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" value="" placeholder="Username" />
+        </div>
+
+        <div data-role="fieldcontain" class="ui-hide-label">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="" placeholder="Password" />
+        </div>
+
+        <input type="submit" value="Login" id="submitButton">
+        </form>
+
+    </div>
+
+    <div data-role="footer">
+        <h4>&copy; Fluid3 Pty. Ltd.</h4>
+    </div>
+
+</div>
+
+<script>
+$("#loginPage").live("pageinit", function(e) {
+        checkPreAuth();
+    });
+</script>
+</body>
+</html>
